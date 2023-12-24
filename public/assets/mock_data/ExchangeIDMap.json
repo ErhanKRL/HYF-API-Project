@@ -1,0 +1,67 @@
+{
+    "status": {
+        "timestamp": "2023-11-24T11:30:59.925Z",
+        "error_code": 0,
+        "error_message": null,
+        "elapsed": 6,
+        "credit_count": 1,
+        "notice": null
+    },
+    "data": [
+        {
+            "id": 16,
+            "name": "Poloniex",
+            "slug": "poloniex",
+            "is_active": 1,
+            "is_listed": 0,
+            "is_redistributable": 1,
+            "first_historical_data": "2018-04-26T00:45:00.000Z",
+            "last_historical_data": "2023-11-24T11:10:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 17,
+            "name": "C-CEX",
+            "slug": "c-cex",
+            "is_active": 0,
+            "is_listed": 1,
+            "is_redistributable": 0,
+            "first_historical_data": "2018-04-26T00:45:00.000Z",
+            "last_historical_data": "2020-06-05T20:55:00.000Z",
+            "status": "untracked"
+        },
+        {
+            "id": 21,
+            "name": "BTCC",
+            "slug": "btcc",
+            "is_active": 1,
+            "is_listed": 0,
+            "is_redistributable": 1,
+            "first_historical_data": "2018-04-26T00:45:00.000Z",
+            "last_historical_data": "2023-11-24T11:10:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 22,
+            "name": "Bittrex Global",
+            "slug": "bittrex",
+            "is_active": 1,
+            "is_listed": 0,
+            "is_redistributable": 1,
+            "first_historical_data": "2018-04-26T00:45:00.000Z",
+            "last_historical_data": "2023-11-24T11:10:00.000Z",
+            "status": "active"
+        },
+        {
+            "id": 24,
+            "name": "Kraken",
+            "slug": "kraken",
+            "is_active": 1,
+            "is_listed": 0,
+            "is_redistributable": 1,
+            "first_historical_data": "2018-04-26T00:45:00.000Z",
+            "last_historical_data": "2023-11-24T11:10:00.000Z",
+            "status": "active"
+        }
+    ]
+}

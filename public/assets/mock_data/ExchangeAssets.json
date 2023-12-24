@@ -1,0 +1,87 @@
+{
+    "status": {
+        "timestamp": "2023-11-23T23:19:00.614Z",
+        "error_code": 0,
+        "error_message": null,
+        "elapsed": 30,
+        "credit_count": 1,
+        "notice": null
+    },
+    "data": [
+        {
+            "wallet_address": "TWd4WrZ9wn84f5x1hZhL4DHvk738ns5jwb",
+            "balance": 80000000000000,
+            "platform": {
+                "crypto_id": 1958,
+                "symbol": "TRX",
+                "name": "TRON"
+            },
+            "currency": {
+                "crypto_id": 16086,
+                "price_usd": 4.6008524812457653e-7,
+                "symbol": "BTT",
+                "name": "BitTorrent (New)"
+            }
+        },
+        {
+            "wallet_address": "0xf977814e90da44bfa03b6295a0616a897441acec",
+            "balance": 69113675.03,
+            "platform": {
+                "crypto_id": 1839,
+                "symbol": "BNB",
+                "name": "BNB"
+            },
+            "currency": {
+                "crypto_id": 11374,
+                "price_usd": 0.10585172073921269,
+                "symbol": "DAR",
+                "name": "Mines of Dalarnia"
+            }
+        },
+        {
+            "wallet_address": "0xdfd5293d8e347dfe59e90efd55b2956a1343963d",
+            "balance": 2820903.55,
+            "platform": {
+                "crypto_id": 1027,
+                "symbol": "ETH",
+                "name": "Ethereum"
+            },
+            "currency": {
+                "crypto_id": 1772,
+                "price_usd": 0.7590311513781287,
+                "symbol": "STORJ",
+                "name": "Storj"
+            }
+        },
+        {
+            "wallet_address": "0xe2fc31f816a9b94326492132018c3aecc4a93ae1",
+            "balance": 804751.99,
+            "platform": {
+                "crypto_id": 1839,
+                "symbol": "BNB",
+                "name": "BNB"
+            },
+            "currency": {
+                "crypto_id": 7186,
+                "price_usd": 2.3927314241054654,
+                "symbol": "CAKE",
+                "name": "PancakeSwap"
+            }
+        },
+        {
+            "wallet_address": "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8",
+            "balance": 100000000,
+            "platform": {
+                "crypto_id": 1027,
+                "symbol": "ETH",
+                "name": "Ethereum"
+            },
+            "currency": {
+                "crypto_id": 3783,
+                "price_usd": 0.024535836579085857,
+                "symbol": "ANKR",
+                "name": "Ankr"
+            }
+        }
+    ]
+}
