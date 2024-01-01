@@ -1,72 +1,72 @@
 {
-    "status": {
-        "timestamp": "2023-11-23T22:34:02.105Z",
-        "error_code": 0,
-        "error_message": null,
-        "elapsed": 215,
-        "credit_count": 1,
-        "notice": null
+  "status": {
+    "timestamp": "2023-11-23T22:34:02.105Z",
+    "error_code": 0,
+    "error_message": null,
+    "elapsed": 215,
+    "credit_count": 1,
+    "notice": null
+  },
+  "data": [
+    {
+      "id": 1,
+      "rank": 1,
+      "name": "Bitcoin",
+      "symbol": "BTC",
+      "slug": "bitcoin",
+      "is_active": 1,
+      "status": "active",
+      "first_historical_data": "2010-07-13T00:05:00.000Z",
+      "last_historical_data": "2023-11-23T22:20:00.000Z",
+      "platform": null
     },
-    "data": [
-        {
-            "id": 1,
-            "rank": 1,
-            "name": "Bitcoin",
-            "symbol": "BTC",
-            "slug": "bitcoin",
-            "is_active": 1,
-            "status": "active",
-            "first_historical_data": "2010-07-13T00:05:00.000Z",
-            "last_historical_data": "2023-11-23T22:20:00.000Z",
-            "platform": null
-        },
-        {
-            "id": 2,
-            "rank": 18,
-            "name": "Litecoin",
-            "symbol": "LTC",
-            "slug": "litecoin",
-            "is_active": 1,
-            "status": "active",
-            "first_historical_data": "2013-04-28T18:45:00.000Z",
-            "last_historical_data": "2023-11-23T22:20:00.000Z",
-            "platform": null
-        },
-        {
-            "id": 3,
-            "rank": 691,
-            "name": "Namecoin",
-            "symbol": "NMC",
-            "slug": "namecoin",
-            "is_active": 1,
-            "status": "active",
-            "first_historical_data": "2013-04-28T18:45:00.000Z",
-            "last_historical_data": "2023-11-23T22:20:00.000Z",
-            "platform": null
-        },
-        {
-            "id": 4,
-            "rank": 6180,
-            "name": "Terracoin",
-            "symbol": "TRC",
-            "slug": "terracoin",
-            "is_active": 1,
-            "status": "active",
-            "first_historical_data": "2013-04-28T18:45:00.000Z",
-            "last_historical_data": "2023-11-23T22:20:00.000Z",
-            "platform": null
-        },
-        {
-            "id": 5,
-            "rank": 848,
-            "name": "Peercoin",
-            "symbol": "PPC",
-            "slug": "peercoin",
-            "is_active": 1,
-            "status": "active",
-            "first_historical_data": "2013-04-28T18:45:00.000Z",
-            "last_historical_data": "2023-11-23T22:20:00.000Z",
-            "platform": null
-        }
-    ]
+    {
+      "id": 2,
+      "rank": 18,
+      "name": "Litecoin",
+      "symbol": "LTC",
+      "slug": "litecoin",
+      "is_active": 1,
+      "status": "active",
+      "first_historical_data": "2013-04-28T18:45:00.000Z",
+      "last_historical_data": "2023-11-23T22:20:00.000Z",
+      "platform": null
+    },
+    {
+      "id": 3,
+      "rank": 691,
+      "name": "Namecoin",
+      "symbol": "NMC",
+      "slug": "namecoin",
+      "is_active": 1,
+      "status": "active",
+      "first_historical_data": "2013-04-28T18:45:00.000Z",
+      "last_historical_data": "2023-11-23T22:20:00.000Z",
+      "platform": null
+    },
+    {
+      "id": 4,
+      "rank": 6180,
+      "name": "Terracoin",
+      "symbol": "TRC",
+      "slug": "terracoin",
+      "is_active": 1,
+      "status": "active",
+      "first_historical_data": "2013-04-28T18:45:00.000Z",
+      "last_historical_data": "2023-11-23T22:20:00.000Z",
+      "platform": null
+    },
+    {
+      "id": 5,
+      "rank": 848,
+      "name": "Peercoin",
+      "symbol": "PPC",
+      "slug": "peercoin",
+      "is_active": 1,
+      "status": "active",
+      "first_historical_data": "2013-04-28T18:45:00.000Z",
+      "last_historical_data": "2023-11-23T22:20:00.000Z",
+      "platform": null
+    }
+  ]
 }

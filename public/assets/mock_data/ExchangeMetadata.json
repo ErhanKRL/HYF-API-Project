@@ -1,88 +1,78 @@
 {
-    "status": {
-        "timestamp": "2023-11-23T23:25:24.851Z",
-        "error_code": 0,
-        "error_message": null,
-        "elapsed": 60,
-        "credit_count": 1,
-        "notice": null
+  "status": {
+    "timestamp": "2023-11-23T23:25:24.851Z",
+    "error_code": 0,
+    "error_message": null,
+    "elapsed": 60,
+    "credit_count": 1,
+    "notice": null
+  },
+  "data": {
+    "2": {
+      "id": 2,
+      "name": "WEX",
+      "slug": "wex",
+      "description": null,
+      "notice": "WARNING: All Bitcoin (BTC) withdrawals are currently disabled.",
+      "logo": "https://s2.coinmarketcap.com/static/img/exchanges/64x64/2.png",
+      "countries": [],
+      "fiats": [],
+      "urls": {
+        "fee": ["https://wex.nz/fees"],
+        "actual": [],
+        "chat": [],
+        "website": ["https://wex.nz/"],
+        "blog": ["https://wex.nz/news"],
+        "twitter": ["https://twitter.com/WEXnz"]
+      },
+      "tags": null,
+      "type": "",
+      "porStatus": 0,
+      "porAuditStatus": 0,
+      "walletSourceStatus": 0,
+      "porSwitch": "{\"totalAssetSwitch\":1,\"auditSwitch\":1,\"walletAddressSwitch\":1,\"tokenSwitch\":1}",
+      "date_launched": "2017-09-15T00:00:00.000Z",
+      "is_hidden": 0,
+      "is_redistributable": 1,
+      "maker_fee": 0,
+      "taker_fee": 0,
+      "spot_volume_usd": null,
+      "spot_volume_last_updated": null,
+      "weekly_visits": null,
+      "status": "inactive"
     },
-    "data": {
-        "2": {
-            "id": 2,
-            "name": "WEX",
-            "slug": "wex",
-            "description": null,
-            "notice": "WARNING: All Bitcoin (BTC) withdrawals are currently disabled.",
-            "logo": "https://s2.coinmarketcap.com/static/img/exchanges/64x64/2.png",
-            "countries": [],
-            "fiats": [],
-            "urls": {
-                "fee": [
-                    "https://wex.nz/fees"
-                ],
-                "actual": [],
-                "chat": [],
-                "website": [
-                    "https://wex.nz/"
-                ],
-                "blog": [
-                    "https://wex.nz/news"
-                ],
-                "twitter": [
-                    "https://twitter.com/WEXnz"
-                ]
-            },
-            "tags": null,
-            "type": "",
-            "porStatus": 0,
-            "porAuditStatus": 0,
-            "walletSourceStatus": 0,
-            "porSwitch": "{\"totalAssetSwitch\":1,\"auditSwitch\":1,\"walletAddressSwitch\":1,\"tokenSwitch\":1}",
-            "date_launched": "2017-09-15T00:00:00.000Z",
-            "is_hidden": 0,
-            "is_redistributable": 1,
-            "maker_fee": 0,
-            "taker_fee": 0,
-            "spot_volume_usd": null,
-            "spot_volume_last_updated": null,
-            "weekly_visits": null,
-            "status": "inactive"
-        },
-        "3": {
-            "id": 3,
-            "name": "Vircurex",
-            "slug": "vircurex",
-            "description": null,
-            "notice": "",
-            "logo": "https://s2.coinmarketcap.com/static/img/exchanges/64x64/3.png",
-            "countries": [],
-            "fiats": [],
-            "urls": {
-                "fee": [],
-                "actual": [],
-                "chat": [],
-                "website": [
-                    "https://vircurex.com"
-                ],
-                "blog": [],
-                "twitter": []
-            },
-            "tags": null,
-            "type": "",
-            "porStatus": 0,
-            "porAuditStatus": 0,
-            "walletSourceStatus": 0,
-            "porSwitch": "{\"totalAssetSwitch\":1,\"auditSwitch\":1,\"walletAddressSwitch\":1,\"tokenSwitch\":1}",
-            "date_launched": null,
-            "is_hidden": 0,
-            "is_redistributable": 0,
-            "maker_fee": 0,
-            "taker_fee": 0,
-            "spot_volume_usd": null,
-            "spot_volume_last_updated": null,
-            "weekly_visits": null,
-            "status": "inactive"
-        }
+    "3": {
+      "id": 3,
+      "name": "Vircurex",
+      "slug": "vircurex",
+      "description": null,
+      "notice": "",
+      "logo": "https://s2.coinmarketcap.com/static/img/exchanges/64x64/3.png",
+      "countries": [],
+      "fiats": [],
+      "urls": {
+        "fee": [],
+        "actual": [],
+        "chat": [],
+        "website": ["https://vircurex.com"],
+        "blog": [],
+        "twitter": []
+      },
+      "tags": null,
+      "type": "",
+      "porStatus": 0,
+      "porAuditStatus": 0,
+      "walletSourceStatus": 0,
+      "porSwitch": "{\"totalAssetSwitch\":1,\"auditSwitch\":1,\"walletAddressSwitch\":1,\"tokenSwitch\":1}",
+      "date_launched": null,
+      "is_hidden": 0,
+      "is_redistributable": 0,
+      "maker_fee": 0,
+      "taker_fee": 0,
+      "spot_volume_usd": null,
+      "spot_volume_last_updated": null,
+      "weekly_visits": null,
+      "status": "inactive"
     }
+  }
 }

@@ -1,14 +1,15 @@
-const API_KEY = Config.api_key;
-const BASE_URL = Config.base_url
-const url = BASE_URL+'v1/global-metrics/quotes/latest?convert=USD';
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const url = BASE_URL + 'v1/global-metrics/quotes/latest?convert=USD';
 
 export async function getGlobalMetrics() {
+  console.log(API_KEY, BASE_URL);
   try {
     const response = await fetch(url, {
       method: 'GET',
       cache: 'no-cache',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'X-CMC_PRO_API_KEY': API_KEY,
       },
     });
@@ -23,4 +24,4 @@ export async function getGlobalMetrics() {
     console.error('Error:', error);
     throw error;
   }
-};
+}

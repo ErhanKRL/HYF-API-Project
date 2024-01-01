@@ -28,32 +28,32 @@ export const initMainPage = () => {
   const investorsComponent = createInvestorsComponent();
   const filtersComponent = createFiltersComponent();
   const favoritesComponent = createFavoritesComponent();
-  HOME_ICON.addEventListener('click', ()=> {
+  HOME_ICON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
-    USER_INTERFACE.appendChild(globalComponent)
-  })
-  CURRENCIES_BUTTON.addEventListener('click', ()=> {
+    USER_INTERFACE.appendChild(globalComponent);
+  });
+  CURRENCIES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(currencyListComponent);
-  })
-  NETWORKS_BUTTON.addEventListener('click', ()=> {
+  });
+  NETWORKS_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(networksComponent);
-  })
-  EXCHANGES_BUTTON.addEventListener('click', ()=> {
+  });
+  EXCHANGES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(exchangesComponent);
-  })
-  INVESTORS_BUTTON.addEventListener('click', ()=> {
+  });
+  INVESTORS_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(investorsComponent);
-  })
-  FILTERS_BUTTON.addEventListener('click', ()=> {
+  });
+  FILTERS_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(filtersComponent);
-  })
-  FAVORITES_BUTTON.addEventListener('click', ()=> {
+  });
+  FAVORITES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(favoritesComponent);
-  })
+  });
 };
