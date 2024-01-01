@@ -11,6 +11,7 @@ export async function getGlobalMetrics() {
       headers: {
         Accept: 'application/json',
         'X-CMC_PRO_API_KEY': API_KEY,
+        "Accept": "*/*"
       },
     });
 
@@ -25,3 +26,20 @@ export async function getGlobalMetrics() {
     throw error;
   }
 }
+
+// export function getGlobalMetrics(
+//   let myHeaders = new Headers();
+// myHeaders.append("X-CMC_PRO_API_KEY", "a107740d-e18a-428f-8890-de5bf46638e0");
+// myHeaders.append("Accept", "*/*");
+
+// var requestOptions = {
+//   method: 'GET',
+//   headers: myHeaders,
+//   redirect: 'follow'
+// };
+
+// fetch("https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?convert=USD", requestOptions)
+//   .then(response => response.text())
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
+// )

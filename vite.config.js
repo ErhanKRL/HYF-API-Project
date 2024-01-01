@@ -1,9 +1,10 @@
 import { defineConfig } from "vite"
 
-export default defineConfig ({server: {
+export default defineConfig ({
+  server: {
     proxy: {
       "/api": {
-        target: "coinbase url here",
+        target: "https://pro-api.coinmarketcap.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
