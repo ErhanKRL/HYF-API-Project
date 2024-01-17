@@ -1,9 +1,10 @@
 /************************* Variables *************************/
 $up: green;
 $down: red;
-$main-color: #8fafce;
-$button-color: #5e5df0;
-$background-color-main: #1b2228;
+$main-color: #8aacf1;
+$button-color: #5085EC;
+$background-color-main: #202124;
+$background-color-secondary: #3B3B3B;
 
 /************************* Global *************************/
 * {
@@ -118,19 +119,24 @@ main {
 
 .global-container {
   display: flex;
-  width: 90%;
-  max-width: 100%;
+  width: 80%;
   margin: auto;
   margin-top: 20px;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 25px;
-  color: #fff;
   border: 1px solid #fff;
 }
-.coin-list-container-hidden {
-  display: none;
+
+.global-metric{
+  width: 30%;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  background-color: $background-color-secondary;
+  border: 1px solid #fff;
 }
+
 .coin-list-container {
   display: flex;
   width: 90%;
