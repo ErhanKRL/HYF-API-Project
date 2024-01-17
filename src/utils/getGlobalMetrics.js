@@ -3,7 +3,6 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 const url = BASE_URL + 'v1/global-metrics/quotes/latest?convert=USD';
 
 export async function getGlobalMetrics() {
-  console.log(API_KEY, BASE_URL);
   try {
     const response = await fetch(url, {
       method: 'GET',
@@ -11,7 +10,6 @@ export async function getGlobalMetrics() {
       headers: {
         Accept: 'application/json',
         'X-CMC_PRO_API_KEY': API_KEY,
-        "Accept": "*/*"
       },
     });
 
