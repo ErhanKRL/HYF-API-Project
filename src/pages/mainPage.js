@@ -19,28 +19,28 @@ export const initMainPage = async () => {
   USER_INTERFACE.innerHTML = '';
   const globalComponent = await createGlobalComponent();
   USER_INTERFACE.appendChild(globalComponent);
-  const currencyListComponent = createCurrencyListComponent();
-  const categoriesComponent = createCategoriesComponent();
-  const exchangesComponent = createExchangesComponent();
-  const favoritesComponent = createFavoritesComponent();
   HOME_ICON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
     USER_INTERFACE.appendChild(globalComponent);
   });
-  CURRENCIES_BUTTON.addEventListener('click', () => {
+  CURRENCIES_BUTTON.addEventListener('click',async () => {
     USER_INTERFACE.innerHTML = '';
+    const currencyListComponent = await createCurrencyListComponent();
     USER_INTERFACE.appendChild(currencyListComponent);
   });
   CATEGORIES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
+    const categoriesComponent = createCategoriesComponent();
     USER_INTERFACE.appendChild(categoriesComponent);
   });
   EXCHANGES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
+    const exchangesComponent = createExchangesComponent();
     USER_INTERFACE.appendChild(exchangesComponent);
   });
   FAVORITES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
+    const favoritesComponent = createFavoritesComponent();
     USER_INTERFACE.appendChild(favoritesComponent);
   });
 };

@@ -57,6 +57,5 @@ const createTable = (name, data) => {
   const table = document.createElement("table");
   generateTable(table, data, name);
   createTableHead(table, name);
-  console.log(table);
   return table;
 };
