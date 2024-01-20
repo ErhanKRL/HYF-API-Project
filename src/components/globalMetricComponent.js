@@ -1,5 +1,4 @@
-import { formatNumber } from "../utils/formatNumber";
-import { formatText } from "../utils/formatText";
+import { formatData } from "../utils/formatData";
 
 export const createGlobalMetricComponent = (title, globalMetrics) => {
   const {total_market_cap, stablecoin_market_cap, altcoin_market_cap, defi_market_cap} = globalMetrics.data.quote.USD;
@@ -40,8 +39,8 @@ const createTableHead = (table, name) => {
 
 const generateTable = (table, data, name) => {
   Object.keys(data).forEach(key =>{
-    let text = formatText(key);
-    let value = formatNumber(data[key], name);
+    let text = formatData(key, 'Title');
+    let value = formatData(data[key], name);
     let row = table.insertRow();
     let titleCell = row.insertCell();
     let titleText = document.createTextNode(text);

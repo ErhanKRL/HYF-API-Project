@@ -91,3 +91,97 @@
     }
   }
 }
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination Example</title>
+  <style>
+    .pagination {
+      display: flex;
+      list-style: none;
+      padding: 0;
+    }
+
+    .pagination button {
+      margin: 0 5px;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="data-container"></div>
+<ul id="pagination" class="pagination">
+  <button id="prevBtn">Previous</button>
+  <button id="page1">1</button>
+  <button id="page2">2</button>
+  <button id="page3">3</button>
+  <button id="page4">4</button>
+  <button id="page5">5</button>
+  <button id="nextBtn">Next</button>
+</ul>
+
+<script>
+  const itemsPerPage = 100;
+  let currentPage = 1;
+
+  // Function to fetch data from the API
+  function fetchData(start) {
+    // Your API call logic here
+    console.log(`Fetching data starting from ${start}`);
+    // For this example, let's assume you have a function that fetches data
+    // and updates the UI with the received data.
+    // updateUIWithData(apiData);
+  }
+
+  // Function to update UI with data
+  function updateUIWithData(data) {
+    // Update the UI with the received data
+    document.getElementById('data-container').innerHTML = JSON.stringify(data, null, 2);
+  }
+
+  // Function to handle page clicks
+  function handlePageClick(page) {
+    const start = (page - 1) * itemsPerPage + 1;
+    currentPage = page;
+    fetchData(start);
+    updatePaginationButtons();
+  }
+
+  // Function to update the state of pagination buttons
+  function updatePaginationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === totalPages;
+
+    for (let i = 1; i <= 5; i++) {
+      const pageBtn = document.getElementById(`page${i}`);
+      const pageNumber = currentPage + i - 3;
+      const start = (pageNumber - 1) * itemsPerPage + 1;
+      pageBtn.textContent = pageNumber;
+      pageBtn.disabled = start < 1 || start > 1000;
+    }
+  }
+
+  // Event listeners for pagination buttons
+  document.getElementById('prevBtn').addEventListener('click', () => handlePageClick(currentPage - 1));
+  document.getElementById('nextBtn').addEventListener('click', () => handlePageClick(currentPage + 1));
+  for (let i = 1; i <= 5; i++) {
+    document.getElementById(`page${i}`).addEventListener('click', () => handlePageClick(currentPage + i - 3));
+  }
+
+  // Initial data fetch
+  const totalPages = Math.ceil(1000 / itemsPerPage); // Assuming 1000 total records
+  fetchData(1);
+  updatePaginationButtons();
+</script>
+
+</body>
+</html>
