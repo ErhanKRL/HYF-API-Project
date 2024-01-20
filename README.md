@@ -8,8 +8,6 @@
 * Data s are provided by Coinmarketcap.com API.
 * There is a 10000/month and 100/minute rate limit. So there is a cashing strategy for using limits economically.
 * Vite is used for development environment. `npm run dev` for running application.
-* Repo of the app can be found here: https://github.com/ErhanKRL/HYF-API-Project
-* These information can be found also at Readme file of project.
 
 ## Must Have
 
