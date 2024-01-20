@@ -6,29 +6,34 @@ import { data } from "../data";
 
 
 export const createCurrencyListComponent = async (start, onClick) => {
+  console.log(data.currencyListData)
+  let currencyList;
   let timeStamp;
   if(data.currencyListData === undefined) {
     timeStamp = 0;
-  } else {
-    timeStamp = data.currencyListData.status.timestamp
-  } 
-  const isDataUpToDate = checkDataTimeStamp(timeStamp);
-  console.log(isDataUpToDate);
-  let currencyList;
-  if(isDataUpToDate){
-    currencyList = data.currencyListData;
-  } else {
+  } else if (data.currencyListData[start] === undefined) {
     currencyList = await fetchCurrencyListData(start);
+  } else {
+    timeStamp = data.currencyListData[start].status.timestamp
+    const isDataUpToDate = checkDataTimeStamp(timeStamp);
+    console.log(isDataUpToDate);
+    if(isDataUpToDate){
+    currencyList = data.currencyListData;
+    } else {
+    currencyList = await fetchCurrencyListData(start);
+    }
   }
+  
   //currencyList = await fetchCurrencyListData(start);
-  const currencyListingData = (currencyList).data.map(coin => {
+  const currencyListingData = currencyList[start].data.map(coin => {
     return diluteListingData(coin)
   })
   console.log(currencyListingData)
   const table = createTable(currencyListingData)
   const containerElement = document.createElement('div');
   containerElement.className = 'coin-list-container';
-  const paginationComponent = createPaginationComponent(onClick)
+  const totalPages = currencyList[start].status.total_count;
+  const paginationComponent = createPaginationComponent(totalPages, onClick)
   //const button = document.createElement('button');
   //button.textContent = 'button'
   //button.addEventListener('click', onClick);
@@ -41,9 +46,10 @@ export const createCurrencyListComponent = async (start, onClick) => {
 const itemsPerPage = 100;
 let startPage = 1;
 let currentPage = startPage;
-const totalPages = Math.ceil(1000 / itemsPerPage);
 
-const createPaginationComponent = (onClick) => {
+
+const createPaginationComponent = (totalCount, onClick) => {
+  const totalPages = Math.ceil(totalCount / itemsPerPage);
     startPage = currentPage - 2;
   if (startPage < 1){
     startPage = 1;
@@ -170,7 +176,7 @@ const createTable = (data) => {
 
 async function fetchCurrencyListData(start) {
   try {
-    data.currencyListData = await getCurrencyList(start);
+    data.currencyListData[start] = await getCurrencyList(start);
     localStorage.setItem('data', JSON.stringify(data));
     return data.currencyListData
   } catch (error) {
