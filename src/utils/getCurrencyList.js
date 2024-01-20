@@ -18,7 +18,6 @@ export async function getCurrencyList(start) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const currencyList = await response.json();
-    console.log(`fetched ${start}`)
     return currencyList;
   } catch (error) {
     console.error('Error:', error);

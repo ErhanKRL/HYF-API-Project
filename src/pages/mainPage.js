@@ -40,7 +40,6 @@ const renderCurrenciesPage = async (page) => {
   USER_INTERFACE.innerHTML = '';
   const currencyListComponent = await createCurrencyListComponent(page, (start) => {
     renderCurrenciesPage(start);
-    console.log(start);
   });
   USER_INTERFACE.appendChild(currencyListComponent);
 }
