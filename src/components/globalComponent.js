@@ -4,14 +4,19 @@ import { checkDataTimeStamp } from "../utils/checkDataTimeStamp";
 import { data } from "../data";
 
 const titles = ['Market Capital', 'Dominance', 'Volume']
-const timeStamp = data.globalMetricsData.status.timestamp;
+let timeStamp;
+if(data.globalMetricsData === undefined) {
+  timeStamp = 0;
+ } else {
+  timeStamp = data.globalMetricsData.status.timestamp
+} 
+  
 
 export const createGlobalComponent = async () => {
   const isDataUpToDate = checkDataTimeStamp(timeStamp)
   let globalMetrics;
   if(isDataUpToDate){
     globalMetrics = data.globalMetricsData;
-    console.log(isDataUpToDate)
   } else {
     globalMetrics = await fetchGlobalMetricsData();
   }

@@ -1,21 +1,25 @@
 /************************* Variables *************************/
-$up: green;
-$down: red;
+$up: #16C784;
+$down: #EA3943;
 $main-color: #8aacf1;
-$button-color: #5085EC;
-$background-color-main: #202124;
-$background-color-secondary: #3B3B3B;
-
+$button-color: #3861FB;
+$background-color-main: #0D1421;
+$background-color-secondary: #222531;
+$main-font: Roboto,Helvetica,Arial,sans-serif;
+$lfs-yellow: #fab700;
+$lfs-grey: #75787b;
 /************************* Global *************************/
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: $main-font;
 }
 html,
 body {
   width: 100%;
   height: 100%;
+  font-size: 15px;
 }
 /************************* Global *************************/
 
@@ -45,7 +49,6 @@ header {
 .home-icon {
   color: $main-color;
   font-size: 45px;
-  margin-left: 10vw;
   cursor: pointer;
   transition:
     height 400ms,
@@ -65,7 +68,6 @@ ul {
 }
 li {
   margin: 5px 15px;
-  font-family: Roboto;
   font-size: x-large;
   list-style: none;
   color: $main-color;
@@ -75,38 +77,6 @@ li:hover {
   color: #fff;
 }
 
-.search-container {
-  display: flex;
-  margin-right: 7vw;
-  justify-content: center;
-  align-items: center;
-}
-.search-field {
-  display: flex;
-  width: 20vw;
-  max-width: 200px;
-  padding: 0 6px 0 6px;
-  border: 1px solid $main-color;
-  border-radius: 30px;
-  align-items: center;
-}
-.search-input {
-  width: 90%;
-  border: none;
-  background-color: transparent;
-  color: $main-color;
-}
-.search-input:focus {
-  width: 90%;
-  outline: #000;
-  color: $main-color;
-}
-.material-icons {
-  width: 10%;
-  height: 100%;
-  margin-right: 8px;
-  color: $main-color;
-}
 
 /* Main Styles */
 main {
@@ -139,20 +109,68 @@ main {
 
 .coin-list-container {
   display: flex;
-  width: 90%;
+  width: 80%;
   max-width: 100%;
   margin: auto;
   margin-top: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
   color: #fff;
-  border: 1px solid #fff;
+  ul{
+    button{
+      min-width: 25px;
+      width: fit-content;
+      margin: 5px;
+      font-size: large;
+      border: none;
+      color:white;
+      background-color: transparent;
+      cursor: pointer;
+    }
+    .button-active{
+      background-color: $button-color;
+      border-radius: 3px;
+    }
+  }
+  table{
+    width:100%;
+    font-size: medium;
+    thead {
+      height: 50px;
+      border-bottom: 20px solid $lfs-yellow;
+      th {
+          text-transform: uppercase;
+          text-align: left;
+          padding: 10px;
+          color: $main-color;
+          border-top: 2px solid $lfs-yellow;
+          border-bottom: 2px solid $lfs-yellow;
+      }
+    }
+    tbody {
+      tr {
+          td {
+              padding: 20px 10px;
+              border-bottom: 1px solid $lfs-grey;
+          }
+          th {
+              padding-left: 10px;
+          }
+      }
+  }
+  }
 }
 .coin-list-container-hidden {
   display: none;
 }
-
+.up{
+  color:$up;
+  font-size: large;
+}
+.down{
+  color:$down;
+  font-size: large;
+}
 #goToTopButton {
   display: none;
   width: 50px;
@@ -164,6 +182,10 @@ main {
   background-color: $main-color;
   position: fixed;
   z-index: 1;
+}
+
+.goToTop{
+  font-size: xx-large;
 }
 
 /* Footer Styles */
