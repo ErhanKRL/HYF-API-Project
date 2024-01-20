@@ -1,6 +1,6 @@
 const texts = ['Title', 'name', 'symbol'];
-    const numbers = ['Market Capital', 'Volume', 'Dominance', 'Percentage', 'm_cap', 'price', 'volume_7d', 'volume_24h','change_7d', 'change_24h', 'v_change_24h'];
-    const percentages = ['Dominance', 'Percentage', 'change_7d', 'change_24h', 'v_change_24h']
+    const numbers = ['Market Capital', 'Volume', 'Dominance', 'Percentage', 'm_cap', 'price', 'volume_7d', 'volume_24h','change_7d', 'change_24h', 'v_change_24h', 'volume' ];
+    const percentages = ['Dominance', 'Percentage', 'change_7d', 'change_24h', 'v_change_24h', 'avg_p_change', 'm_cap_change', 'v_change']
 export function formatData(data, type){
     
     let formattedData;
@@ -32,7 +32,9 @@ function formatNumber(number, type) {
         return `$ ${(number / 1e6).toFixed(1)} M`;
     } else if (number >= 1e3) {
         return `$ ${(number / 1e3).toFixed(1)} K`;
-    } else {
+    } else if (number === 0) {
+        return `$ ${number}`;
+    }else {
         return `$ ${number.toFixed(2)}`;
     }  
     } 

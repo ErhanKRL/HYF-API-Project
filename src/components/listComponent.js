@@ -10,7 +10,7 @@ export const createCurrencyListComponent = async (start, onClick) => {
   let currencyList;
   let timeStamp;
   if(data.currencyListData === undefined) {
-    timeStamp = 0;
+    currencyList = await fetchCurrencyListData(start);
   } else if (data.currencyListData[start] === undefined) {
     currencyList = await fetchCurrencyListData(start);
   } else {
@@ -18,10 +18,9 @@ export const createCurrencyListComponent = async (start, onClick) => {
     const isDataUpToDate = checkDataTimeStamp(timeStamp);
     if(isDataUpToDate){
     currencyList = data.currencyListData;
-    } else {
-    currencyList = await fetchCurrencyListData(start);
-    }
+    } 
   }
+  console.log(currencyList);
   const currencyListingData = currencyList[start].data.map(coin => {
     return diluteListingData(coin)
   })

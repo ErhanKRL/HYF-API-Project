@@ -24,9 +24,7 @@ export const initMainPage = async () => {
     renderCurrenciesPage(1);
   });
   CATEGORIES_BUTTON.addEventListener('click', () => {
-    USER_INTERFACE.innerHTML = '';
-    const categoriesComponent = createCategoriesComponent();
-    USER_INTERFACE.appendChild(categoriesComponent);
+    renderCategoriesPage(1)
   });
   EXCHANGES_BUTTON.addEventListener('click', () => {
     USER_INTERFACE.innerHTML = '';
@@ -42,6 +40,14 @@ const renderCurrenciesPage = async (page) => {
     renderCurrenciesPage(start);
   });
   USER_INTERFACE.appendChild(currencyListComponent);
+}
+
+const renderCategoriesPage = async (page) => {
+  USER_INTERFACE.innerHTML = '';
+  const categoryListComponent = await createCategoriesComponent(page, (start) => {
+    renderCategoriesPage(start);
+  });
+  USER_INTERFACE.appendChild(categoryListComponent);
 }
 
 const goToTop = () => {
