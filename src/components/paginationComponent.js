@@ -1,10 +1,14 @@
 const itemsPerPage = 100;
 let startPage = 1;
 let currentPage = startPage;
+let endPage = startPage + 4;
 
 
 export const createPaginationComponent = (totalCount, onClick) => {
   const totalPages = Math.ceil(totalCount / itemsPerPage);
+    if(totalPages < 5){
+      endPage = totalPages;
+    }
     startPage = currentPage - 2;
   if (startPage < 1){
     startPage = 1;
@@ -22,7 +26,7 @@ export const createPaginationComponent = (totalCount, onClick) => {
     })
     prevButton.disabled = currentPage === 1;
     ul.appendChild(prevButton);
-  for(let i = startPage; i <= startPage + 4; i++){
+  for(let i = startPage; i <= endPage; i++){
     const button = document.createElement('button');
     button.id = `page${i}`;
     button.textContent = i;

@@ -20,7 +20,7 @@ const createTableHead = (table, data) => {
   }
   
   const generateTable = (table, data) => {
-    const values = ['cmcRank', 'm_cap', 'name', 'price', 'symbol', 'volume_7d', 'volume_24h', 'num_tokens', 'volume'];
+    const values = ['cmcRank', 'm_cap', 'name', 'price', 'symbol', 'volume_7d', 'volume_24h', 'tokens', 'volume', 'num'];
     const changes = ['change_7d', 'change_24h', 'v_change_24h', 'avg_p_change', 'm_cap_change', 'v_change']
     const tblBody = document.createElement("tbody");
     data.forEach(dataItem =>{

@@ -17,8 +17,8 @@ export async function getCategories(start) {
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-
     const categories = await response.json();
+    console.log('fetched categories', start);
     return categories;
   } catch (error) {
     console.error('Error:', error);

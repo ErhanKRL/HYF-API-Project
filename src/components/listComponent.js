@@ -7,27 +7,32 @@ import { data } from "../data";
 
 
 export const createCurrencyListComponent = async (start, onClick) => {
-  let currencyList;
   let timeStamp;
   if(data.currencyListData === undefined) {
-    currencyList = await fetchCurrencyListData(start);
+    const currencyData = await getCurrencyList(start);
+    data.currencyListData = {
+      [start]: currencyData
+    };
+    localStorage.setItem('data', JSON.stringify(data));
   } else if (data.currencyListData[start] === undefined) {
-    currencyList = await fetchCurrencyListData(start);
+    const currencyData = await getCurrencyList(start);
+    data.currencyListData[start] = currencyData
+    localStorage.setItem('data', JSON.stringify(data));
   } else {
     timeStamp = data.currencyListData[start].status.timestamp
     const isDataUpToDate = checkDataTimeStamp(timeStamp);
-    if(isDataUpToDate){
-    currencyList = data.currencyListData;
+    if(!isDataUpToDate){
+    data.currencyListData[start] = getCurrencyList(start);
+    localStorage.setItem('data', JSON.stringify(data));
     } 
   }
-  console.log(currencyList);
-  const currencyListingData = currencyList[start].data.map(coin => {
+  const currencyListingData = data.currencyListData[start].data.map(coin => {
     return diluteListingData(coin)
   })
   const table = createTable(currencyListingData)
   const containerElement = document.createElement('div');
-  containerElement.className = 'coin-list-container';
-  const totalPages = currencyList[start].status.total_count;
+  containerElement.className = 'list-container';
+  const totalPages = data.currencyListData[start].status.total_count;
   const paginationComponent = createPaginationComponent(totalPages, onClick)
   containerElement.appendChild(paginationComponent);
   containerElement.appendChild(table);
