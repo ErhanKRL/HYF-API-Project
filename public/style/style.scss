@@ -1,11 +1,11 @@
 /************************* Variables *************************/
-$up: #16C784;
-$down: #EA3943;
+$up: #16c784;
+$down: #ea3943;
 $main-color: #8aacf1;
-$button-color: #3861FB;
-$background-color-main: #0D1421;
+$button-color: #3861fb;
+$background-color-main: #0d1421;
 $background-color-secondary: #222531;
-$main-font: Roboto,Helvetica,Arial,sans-serif;
+$main-font: Roboto, Helvetica, Arial, sans-serif;
 $lfs-yellow: #fab700;
 $lfs-grey: #75787b;
 /************************* Global *************************/
@@ -77,7 +77,7 @@ li:hover {
   color: #fff;
 }
 
-.logo{
+.logo {
   width: 70px;
   height: 60px;
 }
@@ -101,7 +101,7 @@ main {
   border: 1px solid #fff;
 }
 
-.global-metric{
+.global-metric {
   width: 30%;
   margin: auto;
   margin-top: 10px;
@@ -120,57 +120,57 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   color: #fff;
-  ul{
-    button{
+  ul {
+    button {
       min-width: 25px;
       width: fit-content;
       margin: 5px;
       font-size: large;
       border: none;
-      color:white;
+      color: white;
       background-color: transparent;
       cursor: pointer;
     }
-    .button-active{
+    .button-active {
       background-color: $button-color;
       border-radius: 3px;
     }
   }
-  table{
-    width:100%;
+  table {
+    width: 100%;
     font-size: medium;
     thead {
       height: 50px;
       border-bottom: 20px solid $lfs-yellow;
       th {
-          text-transform: uppercase;
-          text-align: left;
-          padding: 10px;
-          color: $main-color;
-          border-top: 2px solid $lfs-yellow;
-          border-bottom: 2px solid $lfs-yellow;
+        text-transform: uppercase;
+        text-align: left;
+        padding: 10px;
+        color: $main-color;
+        border-top: 2px solid $lfs-yellow;
+        border-bottom: 2px solid $lfs-yellow;
       }
     }
     tbody {
       tr {
-          td {
-              padding: 20px 10px;
-              border-bottom: 1px solid $lfs-grey;
-          }
-          th {
-              padding-left: 10px;
-          }
+        td {
+          padding: 20px 10px;
+          border-bottom: 1px solid $lfs-grey;
+        }
+        th {
+          padding-left: 10px;
+        }
       }
-  }
+    }
   }
 }
 
-.up{
-  color:$up;
+.up {
+  color: $up;
   font-size: medium;
 }
-.down{
-  color:$down;
+.down {
+  color: $down;
   font-size: medium;
 }
 #goToTopButton {
@@ -186,7 +186,7 @@ main {
   z-index: 1;
 }
 
-.goToTop{
+.goToTop {
   font-size: xx-large;
 }
 

@@ -1,14 +1,13 @@
-import { defineConfig } from "vite"
+import { defineConfig } from 'vite';
 
-export default defineConfig ({
+export default defineConfig({
   server: {
     proxy: {
-      "/api": {
-        target: "https://pro-api.coinmarketcap.com",
+      '/api': {
+        target: 'https://pro-api.coinmarketcap.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
-    },
-  },
-})
-
+    },
+  },
+});

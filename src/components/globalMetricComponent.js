@@ -1,20 +1,50 @@
-import { formatData } from "../utils/formatData";
+import { formatData } from '../utils/formatData';
 
 export const createGlobalMetricComponent = (title, globalMetrics) => {
-  const {total_market_cap, stablecoin_market_cap, altcoin_market_cap, defi_market_cap} = globalMetrics.data.quote.USD;
-  const marketData = {total_market_cap, stablecoin_market_cap, altcoin_market_cap, defi_market_cap}
-  const {btc_dominance, btc_dominance_24h_percentage_change: btc_dominance_24h_change, eth_dominance, eth_dominance_24h_percentage_change: eth_dominance_24h_change} = globalMetrics.data;
-  const dominanceData = {btc_dominance, btc_dominance_24h_change, eth_dominance, eth_dominance_24h_change};
-  const {total_volume_24h, stablecoin_volume_24h, altcoin_volume_24h, defi_volume_24h} = globalMetrics.data.quote.USD;
-  const volumeData = {total_volume_24h, stablecoin_volume_24h, defi_volume_24h, altcoin_volume_24h}
+  const {
+    total_market_cap,
+    stablecoin_market_cap,
+    altcoin_market_cap,
+    defi_market_cap,
+  } = globalMetrics.data.quote.USD;
+  const marketData = {
+    total_market_cap,
+    stablecoin_market_cap,
+    altcoin_market_cap,
+    defi_market_cap,
+  };
+  const {
+    btc_dominance,
+    btc_dominance_24h_percentage_change: btc_dominance_24h_change,
+    eth_dominance,
+    eth_dominance_24h_percentage_change: eth_dominance_24h_change,
+  } = globalMetrics.data;
+  const dominanceData = {
+    btc_dominance,
+    btc_dominance_24h_change,
+    eth_dominance,
+    eth_dominance_24h_change,
+  };
+  const {
+    total_volume_24h,
+    stablecoin_volume_24h,
+    altcoin_volume_24h,
+    defi_volume_24h,
+  } = globalMetrics.data.quote.USD;
+  const volumeData = {
+    total_volume_24h,
+    stablecoin_volume_24h,
+    defi_volume_24h,
+    altcoin_volume_24h,
+  };
   let table;
-  
+
   switch (title) {
     case 'Market Capital':
-      table = createTable(title, marketData)
+      table = createTable(title, marketData);
       break;
     case 'Dominance':
-      table = createTable(title, dominanceData)
+      table = createTable(title, dominanceData);
       break;
     case 'Volume':
       table = createTable(title, volumeData);
@@ -31,14 +61,14 @@ export const createGlobalMetricComponent = (title, globalMetrics) => {
 const createTableHead = (table, name) => {
   let thead = table.createTHead();
   let row = thead.insertRow();
-  let th = document.createElement("th");
+  let th = document.createElement('th');
   let text = document.createTextNode(name);
   th.appendChild(text);
   row.appendChild(th);
-}
+};
 
 const generateTable = (table, data, name) => {
-  Object.keys(data).forEach(key =>{
+  Object.keys(data).forEach((key) => {
     let text = formatData(key, 'Title');
     let value = formatData(data[key], name);
     let row = table.insertRow();
@@ -48,12 +78,11 @@ const generateTable = (table, data, name) => {
     let valueCell = row.insertCell();
     let valueText = document.createTextNode(value);
     valueCell.appendChild(valueText);
-  })
-}
-  
+  });
+};
 
 const createTable = (name, data) => {
-  const table = document.createElement("table");
+  const table = document.createElement('table');
   generateTable(table, data, name);
   createTableHead(table, name);
   return table;
