@@ -3,12 +3,10 @@ import {
   HOME_ICON,
   CURRENCIES_BUTTON,
   CATEGORIES_BUTTON,
-  EXCHANGES_BUTTON,
   GOTO_TOP_BUTTON,
 } from '../elementSelector';
 import { createGlobalComponent } from '../components/globalComponent';
 import { createCurrencyListComponent } from '../components/listComponent';
-import { createExchangesComponent } from '../components/exchangesComponent';
 import { createCategoriesComponent } from '../components/categoriesComponent';
 
 export const initMainPage = async () => {
@@ -26,11 +24,7 @@ export const initMainPage = async () => {
   CATEGORIES_BUTTON.addEventListener('click', () => {
     renderCategoriesPage(1)
   });
-  EXCHANGES_BUTTON.addEventListener('click', () => {
-    USER_INTERFACE.innerHTML = '';
-    const exchangesComponent = createExchangesComponent();
-    USER_INTERFACE.appendChild(exchangesComponent);
-  });
+
   GOTO_TOP_BUTTON.addEventListener('click', goToTop)
 };
 
