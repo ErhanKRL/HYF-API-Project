@@ -1,8 +1,8 @@
 export function checkDataTimeStamp(timeStamp) {
-    const timestampDate = new Date(timeStamp);
-    const currentDate = new Date();
-    const timeDifference = currentDate - timestampDate;  
-    const isUpToDate = timeDifference <= 6 * 240 * 60 * 1000;
-  
-    return isUpToDate;
+  const timestampDate = new Date(timeStamp);
+  const currentDate = new Date();
+  const timeDifference = currentDate - timestampDate;
+  const isUpToDate = timeDifference <= 6 * 240 * 60 * 1000;
+
+  return isUpToDate;
 }
