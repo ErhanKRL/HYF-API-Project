@@ -5,11 +5,12 @@ let pageNumber
 
 export const createPaginationComponent = (start, totalCount, onClick) => {
   const totalPages = Math.ceil(totalCount / itemsPerPage);
+  let currentPage = ((Math.floor(start / itemsPerPage)) + 1)
   
   if(start < 301){
     startPage = 1;
   } else {
-    startPage = ((Math.floor(start / itemsPerPage)) + 1) - 2;
+    startPage = currentPage - 2;
   }
 
   if(totalPages > 5){
@@ -23,9 +24,9 @@ export const createPaginationComponent = (start, totalCount, onClick) => {
     prevButton.id = 'prevBtn';
     prevButton.textContent = 'Prev';
     prevButton.addEventListener('click', () => {
-      let currentPage = ((Math.floor(start / itemsPerPage)) + 1)
-      currentPage --;
-      handlePageClick(currentPage, onClick)
+      let thisPage = currentPage
+      thisPage --;
+      handlePageClick(thisPage, onClick)
     })
     prevButton.disabled = start === 1;
     ul.appendChild(prevButton);
@@ -34,8 +35,7 @@ export const createPaginationComponent = (start, totalCount, onClick) => {
     button.id = `page${i}`;
     button.textContent = i;
     button.value = i;
-    console.log(parseInt(button.value), ((Math.floor(start / itemsPerPage)) + 1))
-    if(parseInt(button.value) === ((Math.floor(start / itemsPerPage)) + 1)){
+    if(parseInt(button.value) === currentPage){
       button.className = 'button-active'
     }
     button.addEventListener('click', (e)=>{
@@ -47,11 +47,11 @@ export const createPaginationComponent = (start, totalCount, onClick) => {
     nextButton.id = 'nextBtn';
     nextButton.textContent = 'Next';
     nextButton.addEventListener('click', () => {
-      let currentPage = ((Math.floor(start / itemsPerPage)) + 1)
-      currentPage ++;
-      handlePageClick(currentPage, onClick)
+      let thisPage = currentPage
+      thisPage ++;
+      handlePageClick(thisPage, onClick)
     })
-    nextButton.disabled = ((Math.floor(start / itemsPerPage)) + 1) >= totalPages;
+    nextButton.disabled = currentPage >= totalPages;
     ul.appendChild(nextButton);
   return ul;
 }
