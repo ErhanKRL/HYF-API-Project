@@ -2,6 +2,7 @@
 $up: #16C784;
 $down: #EA3943;
 $main-color: #8aacf1;
+$second-color:#646B80;
 $button-color: #3861FB;
 $background-color-main: #0D1421;
 $background-color-secondary: #222531;
@@ -48,15 +49,21 @@ header {
 
 .home-icon {
   color: $main-color;
-  font-size: 45px;
+  font-size:60px;
   cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 10px;
   transition:
-    height 400ms,
-    width 400ms;
+    height 400ms, ease-in-out
+    width 400ms, ease-in-out
+}
+.home-icon-hidden{
+  display: none;
 }
 .home-icon:hover {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
+  margin-right: 10px;
   color: #fff;
 }
 
@@ -72,9 +79,14 @@ li {
   list-style: none;
   color: $main-color;
   cursor: pointer;
+  
 }
 li:hover {
   color: #fff;
+}
+
+.nav-home {
+  display: none;
 }
 
 .logo{
@@ -93,22 +105,46 @@ main {
 
 .global-container {
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-top: 20px;
   flex-wrap: wrap;
   gap: 25px;
   border: 1px solid #fff;
-}
-
-.global-metric{
-  width: 30%;
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  justify-content: center;
   color: #fff;
-  background-color: $background-color-secondary;
-  border: 1px solid #fff;
+  .global-metric{
+    border: 1px solid #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:30%;
+    font-size: medium;
+    p{
+      text-transform: uppercase;
+          text-align: left;
+          padding: 10px;
+          color: #fff;
+          border-bottom: 2px solid $lfs-yellow;
+          background-color:$second-color ;
+    }
+    table{
+    width:100%;
+    
+    border: 1px solid #fff;
+    thead {
+      height: 50px;
+    }
+    tbody {
+      tr {
+          td {
+              padding: 20px 10px;
+              border-bottom: 1px solid $lfs-grey;
+          }
+      }
+  }
+  }
+  }
+  
 }
 
 .list-container {
@@ -229,4 +265,41 @@ footer a:hover {
 }
 .toggle-pushed-navigation {
   display: none;
+}
+
+@media only screen and (max-width: 1280px){
+  .global-container{
+    .global-metric{
+      font-size: small;
+    }
+  }
+}
+@media only screen and (max-width: 1024px){
+  .global-container{
+    .global-metric{
+      font-size: x-small;
+    }
+  }
+}
+@media only screen and (max-width: 768px){
+  .global-container{
+    width: 60%;
+    margin-bottom: 20px;
+    .global-metric{
+      width:100%;
+      font-size: small;
+      margin-bottom: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 480px){
+  .global-container{
+    width: 50%;
+    margin-bottom: 20px;
+    .global-metric{
+      width:100%;
+      font-size: x-small;
+      margin-bottom: 10px;
+    }
+  }
 }

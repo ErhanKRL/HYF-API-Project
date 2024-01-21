@@ -1,5 +1,5 @@
 const texts = ['Title', 'name', 'symbol'];
-    const numbers = ['Market Capital', 'Volume', 'Dominance', 'Percentage', 'm_cap', 'price', 'volume_7d', 'volume_24h','change_7d', 'change_24h', 'v_change_24h', 'volume', 'avg_p_change', 'm_cap_change', 'v_change'];
+    const numbers = ['market_capital', 'dominance', 'Percentage', 'm_cap', 'price', 'volume_7d', 'volume_24h','change_7d', 'change_24h', 'v_change_24h', 'volume', 'avg_p_change', 'm_cap_change', 'v_change'];
     const percentages = ['Dominance', 'Percentage', 'change_7d', 'change_24h', 'v_change_24h', 'avg_p_change', 'm_cap_change', 'v_change']
 export function formatData(data, type){
     
