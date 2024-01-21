@@ -3,12 +3,10 @@ import {
   HOME_ICON,
   CURRENCIES_BUTTON,
   CATEGORIES_BUTTON,
-  EXCHANGES_BUTTON,
   GOTO_TOP_BUTTON,
 } from '../elementSelector';
 import { createGlobalComponent } from '../components/globalComponent';
 import { createCurrencyListComponent } from '../components/listComponent';
-import { createExchangesComponent } from '../components/exchangesComponent';
 import { createCategoriesComponent } from '../components/categoriesComponent';
 
 export const initMainPage = async () => {
@@ -24,15 +22,9 @@ export const initMainPage = async () => {
     renderCurrenciesPage(1);
   });
   CATEGORIES_BUTTON.addEventListener('click', () => {
-    USER_INTERFACE.innerHTML = '';
-    const categoriesComponent = createCategoriesComponent();
-    USER_INTERFACE.appendChild(categoriesComponent);
+    renderCategoriesPage(1)
   });
-  EXCHANGES_BUTTON.addEventListener('click', () => {
-    USER_INTERFACE.innerHTML = '';
-    const exchangesComponent = createExchangesComponent();
-    USER_INTERFACE.appendChild(exchangesComponent);
-  });
+
   GOTO_TOP_BUTTON.addEventListener('click', goToTop)
 };
 
@@ -42,6 +34,14 @@ const renderCurrenciesPage = async (page) => {
     renderCurrenciesPage(start);
   });
   USER_INTERFACE.appendChild(currencyListComponent);
+}
+
+const renderCategoriesPage = async (page) => {
+  USER_INTERFACE.innerHTML = '';
+  const categoryListComponent = await createCategoriesComponent(page, (start) => {
+    renderCategoriesPage(start);
+  });
+  USER_INTERFACE.appendChild(categoryListComponent);
 }
 
 const goToTop = () => {
