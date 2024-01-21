@@ -32,7 +32,7 @@ export const createCategoriesComponent = async (start, onClick) => {
   const containerElement = document.createElement('div');
   containerElement.className = 'list-container';
   const totalPages = 300;
-  const paginationComponent = createPaginationComponent(totalPages, onClick)
+  const paginationComponent = createPaginationComponent(start, totalPages, onClick)
   containerElement.appendChild(paginationComponent);
   containerElement.appendChild(table);
   return containerElement;

@@ -33,7 +33,7 @@ export const createCurrencyListComponent = async (start, onClick) => {
   const containerElement = document.createElement('div');
   containerElement.className = 'list-container';
   const totalPages = data.currencyListData[start].status.total_count;
-  const paginationComponent = createPaginationComponent(totalPages, onClick)
+  const paginationComponent = createPaginationComponent(start, totalPages, onClick)
   containerElement.appendChild(paginationComponent);
   containerElement.appendChild(table);
   return containerElement;
