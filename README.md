@@ -2,12 +2,14 @@
 
 ## Description
 
-- Crypto Book is a single page application that user can see and track informations about cryptocurrency market.
+- Coin Book is a single page application that user can see and track informations about cryptocurrency market.
 - coinmarketcap.com, coingecko.com and coinpaprika.com are some similar examples in this area with high usage.
 - Coinmarketcap.com design and color palette are used as inspiration.
 - Data s are provided by Coinmarketcap.com API.
 - There is a 10000/month and 100/minute rate limit. So there is a cashing strategy for using limits economically.
 - Vite is used for development environment. `npm run dev` for running application.
+- Please change `export const API_KEY = import.meta.env.VITE_API_KEY;`in `data.js` with your API Key.
+- Please visit https://pro.coinmarketcap.com/signup for getting account.
 
 ## Must Have
 
