@@ -16,7 +16,7 @@ const numbers = [
   'v_change',
 ];
 const percentages = [
-  'Dominance',
+  'dominance',
   'Percentage',
   'change_7d',
   'change_24h',

@@ -4,7 +4,8 @@ export const createGlobalMetricTableComponent = (title, globalMetrics) => {
   const element = document.createElement('div');
   element.className = 'global-metric';
   const header = document.createElement('p');
-  header.textContent = title;
+  const text = formatData(title, 'Title')
+  header.textContent = text;
   element.appendChild(header);
   const table = document.createElement('table');
   generateTable(table, globalMetrics, title);
