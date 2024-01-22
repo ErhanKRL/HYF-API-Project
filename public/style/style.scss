@@ -449,7 +449,7 @@ footer a:hover {
     }
   }
   .list-container {
-    width: 80%;
+    width: 86%;
     max-width: 100%;
     ul {
       button {
@@ -458,12 +458,29 @@ footer a:hover {
       }
     }
     table {
-      width: 100%;
-      font-size: xx-small;
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 0;
+    overflow-x: auto;
+    white-space: nowrap;
       thead {
         height: 30px;
         th {
           padding: 1px;
+        }
+        :nth-child(1){
+          position: sticky;
+          left: -1px;
+          background-color: #0d1421;
+          z-index: 100;
+        }
+        :nth-child(2){
+          position: sticky;
+          left: 20px;
+          background-color: #0d1421;
+          z-index: 100;
+          text-align: center;
         }
       }
       tbody {
@@ -471,10 +488,20 @@ footer a:hover {
           td {
             padding: 10px 1px;
           }
-          th {
-            padding-left: 5px;
-          }
         }
+        td:nth-child(1){
+          position: sticky;
+          left: -1px;
+          background-color: #0d1421;
+          z-index: 100;
+        }
+        td:nth-child(2){
+          position: sticky;
+          left: 20px;
+          background-color: #0d1421;
+          z-index: 100;
+        }
+        
       }
     }
   }

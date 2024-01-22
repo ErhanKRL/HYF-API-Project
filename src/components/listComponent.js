@@ -46,7 +46,7 @@ function diluteListingData(data) {
   const {
     name: name,
     symbol: symbol,
-    cmc_rank: cmcRank,
+    cmc_rank: rank,
     quote: {
       USD: {
         price: price,
@@ -61,7 +61,7 @@ function diluteListingData(data) {
   } = data;
 
   const extractedInfo = {
-    cmcRank,
+    rank,
     name,
     symbol,
     price,

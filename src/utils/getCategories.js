@@ -1,5 +1,4 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+import { API_KEY, BASE_URL } from "../data";
 
 export async function getCategories(start) {
   const url =

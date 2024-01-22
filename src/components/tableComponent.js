@@ -17,11 +17,13 @@ const createTableHead = (table, data) => {
     th.appendChild(titleText);
     row.appendChild(th);
   }
+  thead.appendChild(row);
+  table.appendChild(thead);
 };
 
 const generateTable = (table, data) => {
   const values = [
-    'cmcRank',
+    'rank',
     'm_cap',
     'name',
     'price',
