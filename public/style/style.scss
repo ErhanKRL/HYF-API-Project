@@ -55,11 +55,8 @@ header {
     
     .home-icon {
       color: $second-color;
-      font-size: 60px;
+      font-size: 62px;
       cursor: pointer;
-    }
-    .home-icon-hidden {
-      display: none;
     }
     .home-icon:hover {
       color: #fff;
@@ -269,13 +266,75 @@ footer a:hover {
   display: none;
 }
 
+@media only screen and (max-width: 1366px){
+  .list-container {
+    width: 80%;
+    max-width: 100%;
+    table {
+      width: 100%;
+      font-size: small;
+      thead {
+        height: 40px;
+        th {
+          padding: 10px;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 20px 10px;
+          }
+          th {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  .up {
+    font-size: small;
+  }
+  .down {
+    font-size: small;
+  }
+}
+
 @media only screen and (max-width: 1280px) {
   .global-container {
     .global-metric {
       font-size: small;
     }
   }
-  
+  .list-container {
+    width: 80%;
+    max-width: 100%;
+    table {
+      width: 100%;
+      font-size: x-small;
+      thead {
+        height: 40px;
+        th {
+          padding: 10px;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 20px 10px;
+          }
+          th {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+  .up {
+    font-size: x-small;
+  }
+  .down {
+    font-size: x-small;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .global-container {
@@ -294,6 +353,42 @@ footer a:hover {
         height: 35px;
       }
     }
+  }
+  .list-container {
+    width: 80%;
+    max-width: 100%;
+    ul {
+      button {
+        min-width: 20px;
+        font-size: small;
+      }
+    }
+    table {
+      width: 100%;
+      font-size: xx-small;
+      thead {
+        height: 30px;
+        th {
+          padding: 1px;
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 10px 1px;
+          }
+          th {
+            padding-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  .up {
+    font-size: xx-small;
+  }
+  .down {
+    font-size: xx-small;
   }
 }
 @media only screen and (max-width: 768px) {
