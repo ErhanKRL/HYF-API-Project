@@ -1,5 +1,4 @@
-const API_KEY = import.meta.env.VITE_API_KEY;
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+import { API_KEY, BASE_URL } from "../data";
 const url = BASE_URL + 'v1/global-metrics/quotes/latest?convert=USD';
 
 export async function getGlobalMetrics() {

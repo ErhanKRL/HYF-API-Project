@@ -12,7 +12,7 @@ export const createCategoriesComponent = async (start, onClick) => {
       [start]: categoriesData,
     };
     localStorage.setItem('data', JSON.stringify(data));
-  } else if (data.categoryListData[start] === undefined) {
+  } else if (data.categoryListData[start] === undefined || Object.keys(data.categoryListData[start]).length === 0) {
     const categoriesData = await getCategories(start);
     data.categoryListData[start] = categoriesData;
     localStorage.setItem('data', JSON.stringify(data));

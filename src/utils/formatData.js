@@ -1,8 +1,7 @@
 const texts = ['Title', 'name', 'symbol'];
 const numbers = [
-  'Market Capital',
-  'Volume',
-  'Dominance',
+  'market_capital',
+  'dominance',
   'Percentage',
   'm_cap',
   'price',
@@ -17,7 +16,7 @@ const numbers = [
   'v_change',
 ];
 const percentages = [
-  'Dominance',
+  'dominance',
   'Percentage',
   'change_7d',
   'change_24h',
