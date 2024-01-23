@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL } from "../data";
+import { API_KEY, BASE_URL } from '../data';
 
 export async function getCurrencyList(start) {
   const url =

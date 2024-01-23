@@ -5,14 +5,17 @@ import { createPaginationComponent } from './paginationComponent';
 import { data } from '../data';
 
 export const createCurrencyListComponent = async (start, onClick) => {
-    let timeStamp;
+  let timeStamp;
   if (data.currencyListData === undefined) {
     const currencyData = await getCurrencyList(start);
     data.currencyListData = {
       [start]: currencyData,
     };
     localStorage.setItem('data', JSON.stringify(data));
-  } else if (data.currencyListData[start] === undefined || Object.keys(data.currencyListData[start]).length === 0) {
+  } else if (
+    data.currencyListData[start] === undefined ||
+    Object.keys(data.currencyListData[start]).length === 0
+  ) {
     const currencyData = await getCurrencyList(start);
     data.currencyListData[start] = currencyData;
     localStorage.setItem('data', JSON.stringify(data));

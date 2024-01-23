@@ -73,18 +73,17 @@ header {
     .nav-home {
       display: none;
     }
-    
+
     .logo {
       margin-top: 5px;
       width: 65px;
       height: 55px;
     }
   }
-  .nav-logo{
+  .nav-logo {
     display: none;
   }
 }
-
 
 /* Main Styles */
 main {
@@ -108,20 +107,20 @@ main {
   color: #fff;
   border: 5px solid $up;
   border-radius: 5px;
-  h1{
+  h1 {
     margin-top: 0px;
     font-size: 70px;
-    font-weight:bold;
+    font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0.2em;
   }
-  h3{
+  h3 {
     margin-top: 20px;
     font-size: 30px;
     color: $down;
     letter-spacing: 0.1em;
   }
-  p{
+  p {
     margin-top: 0px;
     margin-bottom: 20px;
     color: $main-color;
@@ -147,7 +146,7 @@ main {
       text-transform: uppercase;
       text-align: left;
       font-weight: bold;
-      letter-spacing:0.3em;
+      letter-spacing: 0.3em;
       padding: 10px;
       color: #fff;
       border-bottom: 2px solid $lfs-yellow;
@@ -167,12 +166,11 @@ main {
           td {
             padding: 20px 10px;
             border-bottom: 1px solid $lfs-grey;
-            color:$up;
+            color: $up;
           }
-          :last-child{
+          :last-child {
             color: #fff;
           }
-          
         }
       }
     }
@@ -202,6 +200,9 @@ main {
     .button-active {
       background-color: $button-color;
       border-radius: 3px;
+    }
+    .disabled {
+      color: $second-color;
     }
   }
   table {
@@ -286,8 +287,7 @@ footer a:hover {
   color: $main-color;
 }
 
-
-@media only screen and (max-width: 1366px){
+@media only screen and (max-width: 1366px) {
   .list-container {
     width: 80%;
     max-width: 100%;
@@ -363,13 +363,13 @@ footer a:hover {
       font-size: x-small;
     }
   }
-  .nav{
+  .nav {
     font-size: large;
-    ul{
-      .home-icon{
+    ul {
+      .home-icon {
         font-size: 40px;
       }
-      .logo{
+      .logo {
         width: 45px;
         height: 35px;
       }
@@ -431,7 +431,7 @@ footer a:hover {
     justify-content: space-between;
     font-size: large;
     border-bottom: 1px solid $lfs-yellow;
-    
+
     ul {
       display: flex;
       flex-direction: column;
@@ -444,7 +444,7 @@ footer a:hover {
       .home-icon {
         display: none;
       }
-      
+
       li {
         margin: 5px 15px;
         list-style: none;
@@ -457,12 +457,12 @@ footer a:hover {
       .nav-home {
         display: block;
       }
-      
+
       .logo {
         display: none;
       }
     }
-    .nav-logo{
+    .nav-logo {
       display: block;
       margin-top: 20px;
       margin-right: 5vw;
@@ -480,24 +480,24 @@ footer a:hover {
       }
     }
     table {
-    display: block;
-    max-width: -moz-fit-content;
-    max-width: fit-content;
-    margin: 0 0;
-    overflow-x: auto;
-    white-space: nowrap;
+      display: block;
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+      margin: 0 0;
+      overflow-x: auto;
+      white-space: nowrap;
       thead {
         height: 30px;
         th {
           padding: 1px;
         }
-        :nth-child(1){
+        :nth-child(1) {
           position: sticky;
           left: -1px;
           background-color: #0d1421;
           z-index: 100;
         }
-        :nth-child(2){
+        :nth-child(2) {
           position: sticky;
           left: 20px;
           background-color: #0d1421;
@@ -511,19 +511,18 @@ footer a:hover {
             padding: 10px 1px;
           }
         }
-        td:nth-child(1){
+        td:nth-child(1) {
           position: sticky;
           left: -1px;
           background-color: #0d1421;
           z-index: 100;
         }
-        td:nth-child(2){
+        td:nth-child(2) {
           position: sticky;
           left: 20px;
           background-color: #0d1421;
           z-index: 100;
         }
-        
       }
     }
   }
@@ -547,7 +546,7 @@ footer a:hover {
     justify-content: space-between;
     font-size: large;
     border-bottom: 1px solid $lfs-yellow;
-    
+
     ul {
       display: flex;
       flex-direction: column;
@@ -560,7 +559,7 @@ footer a:hover {
       .home-icon {
         display: none;
       }
-      
+
       li {
         margin: 5px 15px;
         list-style: none;
@@ -574,12 +573,12 @@ footer a:hover {
       .nav-home {
         display: block;
       }
-      
+
       .logo {
         display: none;
       }
     }
-    .nav-logo{
+    .nav-logo {
       display: block;
       margin-top: 20px;
       margin-right: 5vw;
@@ -588,5 +587,3 @@ footer a:hover {
     }
   }
 }
-
-

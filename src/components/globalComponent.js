@@ -3,16 +3,14 @@ import { checkDataTimeStamp } from '../utils/checkDataTimeStamp';
 import { createGlobalMetricTableComponent } from './globalMetricTableComponent';
 import { data } from '../data';
 
-
-
 export const createGlobalComponent = async () => {
   let timeStamp;
-if (data.globalMetricsData === undefined ) {
-  data.globalMetricsData = await getGlobalMetrics();
-  localStorage.setItem('data', JSON.stringify(data));
-} else {
-  timeStamp = data.globalMetricsData.status.timestamp;
-}
+  if (data.globalMetricsData === undefined) {
+    data.globalMetricsData = await getGlobalMetrics();
+    localStorage.setItem('data', JSON.stringify(data));
+  } else {
+    timeStamp = data.globalMetricsData.status.timestamp;
+  }
   const isDataUpToDate = checkDataTimeStamp(timeStamp);
   if (!isDataUpToDate) {
     data.globalMetricsData = await getGlobalMetrics();

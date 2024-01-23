@@ -28,7 +28,10 @@ export const createPaginationComponent = (start, totalCount, onClick) => {
     thisPage--;
     handlePageClick(thisPage, onClick);
   });
-  prevButton.disabled = start === 1;
+  if (start === 1) {
+    prevButton.disabled = true;
+    prevButton.className = 'disabled';
+  }
   ul.appendChild(prevButton);
   for (let i = startPage; i <= pageNumber; i++) {
     const button = document.createElement('button');
@@ -51,7 +54,10 @@ export const createPaginationComponent = (start, totalCount, onClick) => {
     thisPage++;
     handlePageClick(thisPage, onClick);
   });
-  nextButton.disabled = currentPage >= totalPages;
+  if (currentPage >= totalPages) {
+    nextButton.disabled = true;
+    nextButton.className = 'disabled';
+  }
   ul.appendChild(nextButton);
   return ul;
 };

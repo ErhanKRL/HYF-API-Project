@@ -12,38 +12,38 @@ import { createCategoriesComponent } from '../components/categoriesComponent';
 import { createErrorComponent } from '../components/errorComponent';
 
 export const initMainPage = async () => {
-    window.addEventListener('scroll', showGoToTopButton);
-    await renderHomePage()
-    HOME_ICON.addEventListener('click', async () => {
-      await renderHomePage()
-    });
-    NAV_HOME_BUTTON.addEventListener('click', async () => {
-      await renderHomePage()
-    });
-    CURRENCIES_BUTTON.addEventListener('click', async () => {
-     renderCurrenciesPage(1);
-    });
-    CATEGORIES_BUTTON.addEventListener('click', async () => {
-      renderCategoriesPage(1);
-    });
-  
-    GOTO_TOP_BUTTON.addEventListener('click', goToTop);
+  window.addEventListener('scroll', showGoToTopButton);
+  await renderHomePage();
+  HOME_ICON.addEventListener('click', async () => {
+    await renderHomePage();
+  });
+  NAV_HOME_BUTTON.addEventListener('click', async () => {
+    await renderHomePage();
+  });
+  CURRENCIES_BUTTON.addEventListener('click', async () => {
+    renderCurrenciesPage(1);
+  });
+  CATEGORIES_BUTTON.addEventListener('click', async () => {
+    renderCategoriesPage(1);
+  });
+
+  GOTO_TOP_BUTTON.addEventListener('click', goToTop);
 };
 
 const renderHomePage = async () => {
   USER_INTERFACE.innerHTML = '';
-  try{
+  try {
     const globalComponent = await createGlobalComponent();
     USER_INTERFACE.appendChild(globalComponent);
-  }catch (error){
+  } catch (error) {
     const errorComponent = createErrorComponent(error);
     USER_INTERFACE.appendChild(errorComponent);
-  } 
-}
+  }
+};
 
 const renderCurrenciesPage = async (page) => {
   USER_INTERFACE.innerHTML = '';
-  try{
+  try {
     const currencyListComponent = await createCurrencyListComponent(
       page,
       (start) => {
@@ -51,7 +51,7 @@ const renderCurrenciesPage = async (page) => {
       }
     );
     USER_INTERFACE.appendChild(currencyListComponent);
-  }catch(error){
+  } catch (error) {
     const errorComponent = createErrorComponent(error);
     USER_INTERFACE.appendChild(errorComponent);
   }
@@ -59,19 +59,18 @@ const renderCurrenciesPage = async (page) => {
 
 const renderCategoriesPage = async (page) => {
   USER_INTERFACE.innerHTML = '';
-  try{
-  const categoryListComponent = await createCategoriesComponent(
-    page,
-    (start) => {
-      renderCategoriesPage(start);
-    }
-  );
-  USER_INTERFACE.appendChild(categoryListComponent);
-  }catch(error) {
+  try {
+    const categoryListComponent = await createCategoriesComponent(
+      page,
+      (start) => {
+        renderCategoriesPage(start);
+      }
+    );
+    USER_INTERFACE.appendChild(categoryListComponent);
+  } catch (error) {
     const errorComponent = createErrorComponent(error);
     USER_INTERFACE.appendChild(errorComponent);
   }
-  
 };
 
 const goToTop = () => {

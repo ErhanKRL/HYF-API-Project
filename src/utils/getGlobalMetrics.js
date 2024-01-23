@@ -1,4 +1,4 @@
-import { API_KEY, BASE_URL } from "../data";
+import { API_KEY, BASE_URL } from '../data';
 const url = BASE_URL + 'v1/global-metrics/quotes/latest?convert=USD';
 
 export async function getGlobalMetrics() {
