@@ -24,6 +24,7 @@ export const createErrorComponent = (error) => {
       errorText = 'Something went wrong!';
       break;
     default:
+      status.textContent = '';
       errorText = 'Something went wrong!';
       break;
   }
