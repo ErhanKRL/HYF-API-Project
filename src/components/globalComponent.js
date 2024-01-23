@@ -5,7 +5,7 @@ import { data } from '../data';
 
 export const createGlobalComponent = async () => {
   let timeStamp;
-  if (data.globalMetricsData === undefined) {
+  if (data.globalMetricsData === undefined ||  Object.keys(data.globalMetricsData).length === 0) {
     data.globalMetricsData = await getGlobalMetrics();
     localStorage.setItem('data', JSON.stringify(data));
   } else {

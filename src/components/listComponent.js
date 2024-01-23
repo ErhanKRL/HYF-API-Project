@@ -6,7 +6,7 @@ import { data } from '../data';
 
 export const createCurrencyListComponent = async (start, onClick) => {
   let timeStamp;
-  if (data.currencyListData === undefined) {
+  if (data.currencyListData === undefined ||  Object.keys(data.currencyListData).length === 0) {
     const currencyData = await getCurrencyList(start);
     data.currencyListData = {
       [start]: currencyData,
@@ -23,7 +23,7 @@ export const createCurrencyListComponent = async (start, onClick) => {
     timeStamp = data.currencyListData[start].status.timestamp;
     const isDataUpToDate = checkDataTimeStamp(timeStamp);
     if (!isDataUpToDate) {
-      data.currencyListData[start] = getCurrencyList(start);
+      data.currencyListData[start] = await getCurrencyList(start);
       localStorage.setItem('data', JSON.stringify(data));
     }
   }
