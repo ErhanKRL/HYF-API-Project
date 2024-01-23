@@ -12,7 +12,6 @@ export async function getCategories(start) {
         'X-CMC_PRO_API_KEY': API_KEY,
       },
     });
-
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
@@ -20,7 +19,6 @@ export async function getCategories(start) {
     console.log('fetched categories', start);
     return categories;
   } catch (error) {
-    console.error('Error:', error);
     throw error;
   }
 }

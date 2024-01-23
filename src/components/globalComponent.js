@@ -3,22 +3,22 @@ import { checkDataTimeStamp } from '../utils/checkDataTimeStamp';
 import { createGlobalMetricTableComponent } from './globalMetricTableComponent';
 import { data } from '../data';
 
-let timeStamp;
-if (data.globalMetricsData === undefined) {
-  timeStamp = 0;
+
+
+export const createGlobalComponent = async () => {
+  let timeStamp;
+if (data.globalMetricsData === undefined ) {
+  data.globalMetricsData = await getGlobalMetrics();
+  localStorage.setItem('data', JSON.stringify(data));
 } else {
   timeStamp = data.globalMetricsData.status.timestamp;
 }
-
-export const createGlobalComponent = async () => {
   const isDataUpToDate = checkDataTimeStamp(timeStamp);
-  let globalMetrics;
-  if (isDataUpToDate) {
-    globalMetrics = data.globalMetricsData;
-  } else {
-    globalMetrics = await fetchGlobalMetricsData();
+  if (!isDataUpToDate) {
+    data.globalMetricsData = await getGlobalMetrics();
+    localStorage.setItem('data', JSON.stringify(data));
   }
-  const globalMetricsData = diluteListingData(globalMetrics.data);
+  const globalMetricsData = diluteListingData(data.globalMetricsData.data);
   const element = document.createElement('div');
   element.className = 'global-container';
   Object.keys(globalMetricsData).forEach((key) => {
@@ -30,16 +30,6 @@ export const createGlobalComponent = async () => {
   });
   return element;
 };
-
-async function fetchGlobalMetricsData() {
-  try {
-    data.globalMetricsData = await getGlobalMetrics();
-    localStorage.setItem('data', JSON.stringify(data));
-    return data.globalMetricsData;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
 
 function diluteListingData(data) {
   const {

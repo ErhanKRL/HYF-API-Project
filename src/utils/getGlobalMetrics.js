@@ -1,5 +1,5 @@
 import { API_KEY, BASE_URL } from "../data";
-const url = BASE_URL + 'v1/global-metrics/quotes/latest?convert=USD';
+const url = BASE_URL + 'v1/global-metric/quotes/latest?convert=USD';
 
 export async function getGlobalMetrics() {
   try {
@@ -19,7 +19,6 @@ export async function getGlobalMetrics() {
     const globalMetrics = await response.json();
     return globalMetrics;
   } catch (error) {
-    console.error('Error:', error);
     throw error;
   }
 }

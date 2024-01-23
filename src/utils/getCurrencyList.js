@@ -21,7 +21,6 @@ export async function getCurrencyList(start) {
     console.log('fetching currency', start);
     return currencyList;
   } catch (error) {
-    console.error('Error:', error);
     throw error;
   }
 }
