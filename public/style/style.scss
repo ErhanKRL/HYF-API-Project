@@ -40,18 +40,19 @@ header {
 
 .nav {
   display: flex;
-  width: 100vw;
+  width: 60vw;
   height: 55px;
+  margin: auto;
   margin-top: 10vh;
   justify-content: space-between;
   font-size: x-large;
-  
+  border-bottom: 1px solid $lfs-yellow;
   ul {
     display: flex;
     width: 100vw;
     justify-content: center;
     align-items: center;
-    
+    margin-bottom: 20px;
     .home-icon {
       color: $second-color;
       font-size: 62px;
@@ -285,18 +286,6 @@ footer a:hover {
   color: $main-color;
 }
 
-.toggle-container {
-  display: none;
-}
-.toggle-pushed-container {
-  display: none;
-}
-.toggle-navigation {
-  display: none;
-}
-.toggle-pushed-navigation {
-  display: none;
-}
 
 @media only screen and (max-width: 1366px){
   .list-container {
@@ -435,12 +424,13 @@ footer a:hover {
   }
   .nav {
     margin: auto;
+    margin-top: 5vh;
     display: flex;
     width: 60vw;
     height: 120px;
     justify-content: space-between;
     font-size: large;
-    border-bottom: 1px solid #fab700;
+    border-bottom: 1px solid $lfs-yellow;
     
     ul {
       display: flex;
@@ -449,8 +439,8 @@ footer a:hover {
       justify-content: center;
       align-items: flex-start;
       margin-left: 5vw;
-      margin-top: 20px;
-      
+      margin-top: 30px;
+      margin-bottom: 10px;
       .home-icon {
         display: none;
       }
@@ -546,6 +536,55 @@ footer a:hover {
       width: 100%;
       font-size: xx-small;
       margin-bottom: 10px;
+    }
+  }
+  .nav {
+    margin: auto;
+    margin-top: 5vh;
+    display: flex;
+    width: 60vw;
+    height: 120px;
+    justify-content: space-between;
+    font-size: large;
+    border-bottom: 1px solid $lfs-yellow;
+    
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 5vw;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      .home-icon {
+        display: none;
+      }
+      
+      li {
+        margin: 5px 15px;
+        list-style: none;
+        color: $main-color;
+        cursor: pointer;
+        font-size: medium;
+      }
+      li:hover {
+        color: #fff;
+      }
+      .nav-home {
+        display: block;
+      }
+      
+      .logo {
+        display: none;
+      }
+    }
+    .nav-logo{
+      display: block;
+      margin-top: 20px;
+      margin-right: 5vw;
+      width: 65px;
+      height: 55px;
     }
   }
 }
