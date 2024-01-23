@@ -35,7 +35,6 @@ header {
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  border-bottom-color: 1px solid #fff;
   justify-content: space-between;
 }
 
@@ -95,11 +94,44 @@ main {
   position: relative;
 }
 
+.error-component {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  color: #fff;
+  border: 5px solid $up;
+  border-radius: 5px;
+  h1{
+    margin-top: 0px;
+    font-size: 70px;
+    font-weight:bold;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.2em;
+  }
+  h3{
+    margin-top: 20px;
+    font-size: 30px;
+    color: $down;
+    letter-spacing: 0.1em;
+  }
+  p{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: $main-color;
+  }
+}
+
 .global-container {
   display: flex;
   width: 90%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 50px;
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;

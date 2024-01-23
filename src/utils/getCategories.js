@@ -13,7 +13,7 @@ export async function getCategories(start) {
       },
     });
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(response.status);
     }
     const categories = await response.json();
     console.log('fetched categories', start);

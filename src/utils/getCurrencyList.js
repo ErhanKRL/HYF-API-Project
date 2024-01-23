@@ -15,10 +15,10 @@ export async function getCurrencyList(start) {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(response.status);
     }
     const currencyList = await response.json();
-    console.log('fetching currency', start);
+    console.log('fetched currencies', start);
     return currencyList;
   } catch (error) {
     throw error;

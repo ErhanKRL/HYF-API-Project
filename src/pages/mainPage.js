@@ -9,6 +9,7 @@ import {
 import { createGlobalComponent } from '../components/globalComponent';
 import { createCurrencyListComponent } from '../components/listComponent';
 import { createCategoriesComponent } from '../components/categoriesComponent';
+import { createErrorComponent } from '../components/errorComponent';
 
 export const initMainPage = async () => {
     window.addEventListener('scroll', showGoToTopButton);
@@ -35,7 +36,8 @@ const renderHomePage = async () => {
     const globalComponent = await createGlobalComponent();
     USER_INTERFACE.appendChild(globalComponent);
   }catch (error){
-    console.log(error);
+    const errorComponent = createErrorComponent(error);
+    USER_INTERFACE.appendChild(errorComponent);
   } 
 }
 
@@ -50,7 +52,8 @@ const renderCurrenciesPage = async (page) => {
     );
     USER_INTERFACE.appendChild(currencyListComponent);
   }catch(error){
-    console.log('list error', error)
+    const errorComponent = createErrorComponent(error);
+    USER_INTERFACE.appendChild(errorComponent);
   }
 };
 
@@ -65,7 +68,8 @@ const renderCategoriesPage = async (page) => {
   );
   USER_INTERFACE.appendChild(categoryListComponent);
   }catch(error) {
-    console.log('categories error', error)
+    const errorComponent = createErrorComponent(error);
+    USER_INTERFACE.appendChild(errorComponent);
   }
   
 };
