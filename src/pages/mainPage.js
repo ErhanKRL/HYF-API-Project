@@ -1,6 +1,7 @@
 import {
   USER_INTERFACE,
   HOME_ICON,
+  NAV_HOME_BUTTON,
   CURRENCIES_BUTTON,
   CATEGORIES_BUTTON,
   GOTO_TOP_BUTTON,
@@ -8,39 +9,57 @@ import {
 import { createGlobalComponent } from '../components/globalComponent';
 import { createCurrencyListComponent } from '../components/listComponent';
 import { createCategoriesComponent } from '../components/categoriesComponent';
+import { createErrorComponent } from '../components/errorComponent';
 
 export const initMainPage = async () => {
-  window.addEventListener('scroll', showGoToTopButton);
-  USER_INTERFACE.innerHTML = '';
-  const globalComponent = await createGlobalComponent();
-  USER_INTERFACE.appendChild(globalComponent);
-  HOME_ICON.addEventListener('click', () => {
-    USER_INTERFACE.innerHTML = '';
-    USER_INTERFACE.appendChild(globalComponent);
-  });
-  CURRENCIES_BUTTON.addEventListener('click', () => {
-    renderCurrenciesPage(1);
-  });
-  CATEGORIES_BUTTON.addEventListener('click', () => {
-    renderCategoriesPage(1);
-  });
-
-  GOTO_TOP_BUTTON.addEventListener('click', goToTop);
+    window.addEventListener('scroll', showGoToTopButton);
+    await renderHomePage()
+    HOME_ICON.addEventListener('click', async () => {
+      await renderHomePage()
+    });
+    NAV_HOME_BUTTON.addEventListener('click', async () => {
+      await renderHomePage()
+    });
+    CURRENCIES_BUTTON.addEventListener('click', async () => {
+     renderCurrenciesPage(1);
+    });
+    CATEGORIES_BUTTON.addEventListener('click', async () => {
+      renderCategoriesPage(1);
+    });
+  
+    GOTO_TOP_BUTTON.addEventListener('click', goToTop);
 };
+
+const renderHomePage = async () => {
+  USER_INTERFACE.innerHTML = '';
+  try{
+    const globalComponent = await createGlobalComponent();
+    USER_INTERFACE.appendChild(globalComponent);
+  }catch (error){
+    const errorComponent = createErrorComponent(error);
+    USER_INTERFACE.appendChild(errorComponent);
+  } 
+}
 
 const renderCurrenciesPage = async (page) => {
   USER_INTERFACE.innerHTML = '';
-  const currencyListComponent = await createCurrencyListComponent(
-    page,
-    (start) => {
-      renderCurrenciesPage(start);
-    }
-  );
-  USER_INTERFACE.appendChild(currencyListComponent);
+  try{
+    const currencyListComponent = await createCurrencyListComponent(
+      page,
+      (start) => {
+        renderCurrenciesPage(start);
+      }
+    );
+    USER_INTERFACE.appendChild(currencyListComponent);
+  }catch(error){
+    const errorComponent = createErrorComponent(error);
+    USER_INTERFACE.appendChild(errorComponent);
+  }
 };
 
 const renderCategoriesPage = async (page) => {
   USER_INTERFACE.innerHTML = '';
+  try{
   const categoryListComponent = await createCategoriesComponent(
     page,
     (start) => {
@@ -48,6 +67,11 @@ const renderCategoriesPage = async (page) => {
     }
   );
   USER_INTERFACE.appendChild(categoryListComponent);
+  }catch(error) {
+    const errorComponent = createErrorComponent(error);
+    USER_INTERFACE.appendChild(errorComponent);
+  }
+  
 };
 
 const goToTop = () => {

@@ -1,5 +1,6 @@
 export const USER_INTERFACE = document.querySelector('#user-interface');
 export const HOME_ICON = document.querySelector('#home-icon');
+export const NAV_HOME_BUTTON = document.querySelector('#nav-home');
 export const CURRENCIES_BUTTON = document.querySelector('#currencies');
 export const CATEGORIES_BUTTON = document.querySelector('#categories');
 export const EXCHANGES_BUTTON = document.querySelector('#exchanges');

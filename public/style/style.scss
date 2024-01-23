@@ -35,24 +35,24 @@ header {
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
-  border-bottom-color: 1px solid #fff;
   justify-content: space-between;
 }
 
 .nav {
   display: flex;
-  width: 100vw;
+  width: 60vw;
   height: 55px;
+  margin: auto;
   margin-top: 10vh;
   justify-content: space-between;
   font-size: x-large;
-  
+  border-bottom: 1px solid $lfs-yellow;
   ul {
     display: flex;
     width: 100vw;
     justify-content: center;
     align-items: center;
-    
+    margin-bottom: 20px;
     .home-icon {
       color: $second-color;
       font-size: 62px;
@@ -95,11 +95,44 @@ main {
   position: relative;
 }
 
+.error-component {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  color: #fff;
+  border: 5px solid $up;
+  border-radius: 5px;
+  h1{
+    margin-top: 0px;
+    font-size: 70px;
+    font-weight:bold;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 0.2em;
+  }
+  h3{
+    margin-top: 20px;
+    font-size: 30px;
+    color: $down;
+    letter-spacing: 0.1em;
+  }
+  p{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    color: $main-color;
+  }
+}
+
 .global-container {
   display: flex;
   width: 90%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 50px;
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
@@ -253,18 +286,6 @@ footer a:hover {
   color: $main-color;
 }
 
-.toggle-container {
-  display: none;
-}
-.toggle-pushed-container {
-  display: none;
-}
-.toggle-navigation {
-  display: none;
-}
-.toggle-pushed-navigation {
-  display: none;
-}
 
 @media only screen and (max-width: 1366px){
   .list-container {
@@ -403,12 +424,13 @@ footer a:hover {
   }
   .nav {
     margin: auto;
+    margin-top: 5vh;
     display: flex;
     width: 60vw;
     height: 120px;
     justify-content: space-between;
     font-size: large;
-    border-bottom: 1px solid #fab700;
+    border-bottom: 1px solid $lfs-yellow;
     
     ul {
       display: flex;
@@ -417,8 +439,8 @@ footer a:hover {
       justify-content: center;
       align-items: flex-start;
       margin-left: 5vw;
-      margin-top: 20px;
-      
+      margin-top: 30px;
+      margin-bottom: 10px;
       .home-icon {
         display: none;
       }
@@ -514,6 +536,55 @@ footer a:hover {
       width: 100%;
       font-size: xx-small;
       margin-bottom: 10px;
+    }
+  }
+  .nav {
+    margin: auto;
+    margin-top: 5vh;
+    display: flex;
+    width: 60vw;
+    height: 120px;
+    justify-content: space-between;
+    font-size: large;
+    border-bottom: 1px solid $lfs-yellow;
+    
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 5vw;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      .home-icon {
+        display: none;
+      }
+      
+      li {
+        margin: 5px 15px;
+        list-style: none;
+        color: $main-color;
+        cursor: pointer;
+        font-size: medium;
+      }
+      li:hover {
+        color: #fff;
+      }
+      .nav-home {
+        display: block;
+      }
+      
+      .logo {
+        display: none;
+      }
+    }
+    .nav-logo{
+      display: block;
+      margin-top: 20px;
+      margin-right: 5vw;
+      width: 65px;
+      height: 55px;
     }
   }
 }

@@ -5,10 +5,9 @@ import { createPaginationComponent } from './paginationComponent';
 import { data } from '../data';
 
 export const createCurrencyListComponent = async (start, onClick) => {
-  let timeStamp;
+    let timeStamp;
   if (data.currencyListData === undefined) {
     const currencyData = await getCurrencyList(start);
-    console.log(currencyData)
     data.currencyListData = {
       [start]: currencyData,
     };

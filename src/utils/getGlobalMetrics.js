@@ -13,13 +13,12 @@ export async function getGlobalMetrics() {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      throw new Error(response.status);
     }
 
     const globalMetrics = await response.json();
     return globalMetrics;
   } catch (error) {
-    console.error('Error:', error);
     throw error;
   }
 }
