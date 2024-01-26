@@ -23,7 +23,7 @@ export const createCategoriesComponent = async (start, onClick) => {
     timeStamp = data.categoryListData[start].status.timestamp;
     const isDataUpToDate = checkDataTimeStamp(timeStamp);
     if (!isDataUpToDate) {
-      data.categoryListData[start] = getCategories(start);
+      data.categoryListData[start] = await getCategories(start);
       localStorage.setItem('data', JSON.stringify(data));
     }
   }
